@@ -1,0 +1,603 @@
+/* Reset de margens e paddings para o body e main */
+body, main {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+  }
+
+
+  nav {
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid #000000;
+    border-radius: 70px;
+    height: 60px;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#logo {
+    width: 120px;
+    margin-left: 30px;
+}
+
+#borda {
+
+    width: 290px;
+    height: 290px;
+    transform: translate(-30%, 0%);
+    /* position: absolute; */
+
+}
+
+#barra {
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+    border: 0;
+    background-color: white;
+    margin-left: 400px;
+
+}
+
+.itens {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 30px;
+    transform: translate(65%, -4%);
+    position: absolute;
+
+}
+
+#bag {
+    width: 25px;
+}
+
+#compras {
+    display: flex;
+    position: relative;
+    margin-left: 60px;
+    margin-right: 30px;
+}
+
+#compras:after {
+
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+#compras:hover:after {
+    cursor: pointer;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#menu {
+    width: 20px;
+    height: 20px;
+}
+
+#user {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+    transform: translate(800%, -4%);
+}
+
+#user:hover {
+
+    cursor: pointer;
+}
+
+#logo {
+
+    width: 40px;
+    height: 40px;
+    transform: translate(-1400%, 4%);
+    position: absolute;
+}
+
+#logo:hover {
+    cursor: pointer;
+}
+
+
+
+
+  
+  /* carrossel */
+  carrosell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1000px; /* Ajuste essa margem para que o carrossel não fique coberto pela nav bar */
+}
+  
+  .slider {
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .slides-container {
+    display: flex;
+    width: 100%; /* Certifique-se de que o container do slide ocupe toda a largura disponível */
+}
+
+  
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    border: none;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .slide.previous {
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: -1;
+  }
+  
+  .slide.next {
+    opacity: 0;
+    transform: translateX(100%);
+    z-index: -1;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 85px;
+    color: rgba(255, 255, 255, 0.735);
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .carousel-dot.active {
+    background-color: #555;
+  }
+  
+  /* Media query para tornar o carrossel responsivo */
+  @media (max-width: 768px) {
+    .slider {
+      height: 200px;
+    }
+  }
+
+  
+---------------------------------------------------------------------------------------------------------
+
+/* Caixas de 50% da tela */
+/* ... (seu código CSS existente) ... */
+
+caixona{
+  display: flex;
+}
+
+/* Posicionamento do texto e da imagem */
+.half-screen-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.half-screen {
+  height: 70vh;
+  position: relative; /* Necessário para posicionar corretamente o conteúdo */
+}
+
+.half-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilização do Texto */
+.half-screen h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.half-screen p {
+  font-size: 16px;
+}
+
+/* Posicionar texto e imagem no centro da div */
+.half-screen > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Garantir que o texto e a imagem fiquem na frente da onda */
+}
+
+
+svg{
+  position: absolute;
+  transform: translate(0%, -70%);
+}
+
+.caracteristicas{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  height: 700px;
+  margin-top: 84px;
+  background-color: #FFD600;
+  position: relative; /* Necessário para posicionar o texto acima */
+
+}
+
+
+  
+  /* ... Mais estilos se necessário ... */
+  
+
+
+
+.water-park-table {
+  background-color: #26a69a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+table {
+  width: 400px;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+
+
+td {
+  padding: 15px 20px;
+  text-align: center;
+  color: #fff;
+  
+}
+
+.water-park-cell {
+  font-size: 20px;
+  background-color: #00acc1;
+  border-bottom: 2px solid #00796b;
+}
+
+.water-park-cell:first-child {
+  border-right: 2px solid #00796b;
+}
+
+
+
+h1 {
+  color: #26a69a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.water-park-cell:hover {
+  background-color: #009688;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.water-park-table table {
+  border: 2px solid #00796b;
+}
+
+.water-park-table tr:first-child .water-park-cell {
+  background-color: #00796b;
+}
+
+.water-park-table tr:last-child .water-park-cell {
+  border-bottom: none;
+}
+
+.water-park-table tr:last-child .water-park-cell:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.water-park-table tr:last-child .water-park-cell:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+.horarios{
+  align-self: center;
+  /* padding-left: 105px; */
+  background-color: #00acc1;
+}
+
+caption{
+  padding: 15px 20px;
+  text-align: center;
+  color: #fff;
+  border: 2px solid #00796b;
+}
+
+body {
+    font-family: Verdana;
+    background-size: 100%;
+    background-image: url(so);
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.titulo {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.caixona {
+    background-color: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.caixinha1, .caixinha2, .caixinha3 {
+    background-size: cover;
+    width: 320px;
+    height: 495px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.caixinha1 {
+    background-image: url(ingressocria.png);
+}
+
+.caixinha2 {
+    background-image: url(ingressoadul.png);
+}
+
+.caixinha3 {
+    background-image: url(ingressoidos.jpg)
+}
+
+.caixinha1:hover, .caixinha2:hover, .caixinha3:hover {
+    cursor: pointer;
+    transform: translateY(-25px);
+}
+
+@media screen and (max-width: 768px) {
+    .caixona {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caixinha1, .caixinha2, .caixinha3 {
+        width: 80%;
+    }
+}
+
+#finalizar1, #finalizar2, #finalizar3{
+   transform: translate(0%, 800%);
+   width: 100px;
+   height: 40px;
+   cursor: pointer;
+   background-color: #5CE1E6;
+   border: solid #5CE1E6;
+   border-radius: 10px;
+}
+
+
+.titulo {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 20px;
+  font-family: Verdana;
+  background-size: 100%;
+  background-image: url(source/fundo.png);
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.caixona {
+  background-color: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.caixinha1, .caixinha2, .caixinha3 {
+  background-size: cover;
+  width: 320px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.caixinha1 {
+  background-image: url(source/ingressocria.png);
+}
+
+.caixinha2 {
+  background-image: url(source/ingressoadul.png);
+}
+
+.caixinha3 {
+  background-image: url(source/ingressoidos.png);
+}
+
+.caixinha1:hover, .caixinha2:hover, .caixinha3:hover {
+  cursor: pointer;
+  transform: translateY(-25px);
+}
+
+@media screen and (max-width: 768px) {
+  .caixona {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .caixinha1, .caixinha2, .caixinha3 {
+      width: 80%;
+  }
+}
+
+
+
+.caixona2 {
+    display: flex;
+    width: 100%;
+    height: 750px;
+    border: 0;
+    color: #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-evenly;
+    background-image: url(img/parque1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.imgcx2 {
+
+    width: 40%;
+    height: 70%;
+    background-image: url(2920019.jpg);
+    background-size: cover;
+    /* transform: translate(120%,20%); */
+    border-radius: 20px;
+}
+
+
+.segurança {
+
+    width: 25%;
+    height: 10%;
+    background-color: #0046B2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    margin-bottom: 1px;
+    margin-left: 150px;
+    transform: translate(20%, -400%);
+}
+
+
+.praticidade {
+    width: 25%;
+    height: 10%;
+    background-color: #0046B2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    margin-bottom: 10px;
+    margin-left: 150px;
+    transform: translate(20%, -300%);
+}
+
+
+.rapidez {
+    width: 25%;
+    height: 10%;
+    background-color: #0046B2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    margin-bottom: 10px;
+    margin-left: 150px;
+    transform: translate(20%, -200%);
+}
+
+.valores {
+    transform: translate(225px, 110px);
+    color: #f5f5f5;
+    font-size: 35px;
+}
+
+p{
+    width: 400px;
+    color: #dddddd;
+    font: size 25px ;
+    text-align: justify;
+    
+    transform: translate(180%,-120%);
+}
+
+
+
